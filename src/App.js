@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
-import MatchContainer from './pages/placar/MatchContainer';
-import moment from 'moment';
-
-const data = {
-  match: {
-    date: moment()
-  }
-};
+import Sidenav from './pages/sidenav/Sidenav';
+import Video from './pages/video/Video';
+import Header from './pages/header/Header';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   return (
-    <MatchContainer {...data} />
+    <Provider store={store}>
+      <Header />
+      <Sidenav />
+      <Video />
+    </Provider>
   );
 }
 
